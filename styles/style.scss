@@ -7,6 +7,10 @@ $primaryGreen: #16571e;
 $headerGreen: rgba(174, 255, 13, 0.2);
 $darkGreen: rgb(20, 48, 20);
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 *,
 *::before,
 *::after {
@@ -15,7 +19,7 @@ $darkGreen: rgb(20, 48, 20);
 
 body {
   margin: 0;
-  height: 100vh;
+  max-height: 100vh;
   background: linear-gradient(
     to top right,
     rgba(174, 255, 13, 0.3),
@@ -23,6 +27,7 @@ body {
   );
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
 header {
@@ -39,6 +44,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 
     svg {
       padding-right: 10px;
@@ -73,7 +79,7 @@ header {
         list-style: none;
 
         a {
-          display: block;
+          display: inline-block;
           margin: 0 2rem;
           text-decoration: none;
           font-size: 0.8rem;
@@ -157,7 +163,7 @@ header {
       margin-top: 3.8rem;
 
       .cta {
-        display: block;
+        display: inline-block;
         text-decoration: none;
 
         button {
@@ -269,6 +275,239 @@ header {
         display: inline-block;
         transform: translateX(-10px);
         animation: movement 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@media (max-width: 1260px) {
+  header {
+    padding: 0 5em;
+  }
+
+  .main .left-container {
+    margin-left: 5em;
+  }
+
+  .main .right-container {
+    .img-container .yoga {
+      margin-right: 5rem;
+      width: 24rem;
+    }
+  }
+
+  .main .contact-us {
+    padding: 0 5em 0 5em;
+  }
+}
+
+@media (max-width: 1060px) {
+  .main .contact-us {
+    .social {
+      a {
+        font-size: 1.5rem;
+      }
+    }
+
+    .contact {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .header {
+    .quick-links {
+      position: absolute;
+      bottom: 2%;
+      left: -2%;
+      height: 70px;
+      width: 75%;
+      z-index: 9;
+
+      .link {
+        background: $headerGreen;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+      }
+    }
+  }
+
+  .main .contact-us {
+    position: absolute;
+    top: -10%;
+    background: none;
+    left: 95%;
+    transform: translateX(-95%);
+    width: 45%;
+  }
+
+  .main .right-container {
+    .img-container {
+      .yoga {
+        width: 19.5rem;
+        height: auto;
+      }
+    }
+  }
+
+  .main .left-container {
+    margin-bottom: 5rem;
+
+    .sub-headline {
+      width: 80%;
+    }
+
+    .info {
+      width: 80%;
+    }
+
+    .main-headline {
+      font-size: 3rem;
+    }
+  }
+
+  .main .btn {
+    .cta {
+      button {
+        transform: scale(0.9);
+        transform-origin: left;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 0 3em;
+
+    .quick-links {
+      left: -5%;
+    }
+
+    .logo {
+      .logo-name {
+        font-size: 1.2rem;
+      }
+      svg {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+  .main {
+    .left-container {
+      margin-left: 3em;
+
+      .main-headline {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+      }
+
+      .sub-headline {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+      }
+
+      .info {
+        font-size: 0.7rem;
+      }
+    }
+
+    .btn {
+      .cta {
+        button {
+          transform: scale(0.85);
+          transform-origin: left;
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .right-container {
+      margin-right: -3em;
+    }
+
+    .contact-us {
+      left: 98%;
+      transform: translateX(-95%);
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .main {
+    .right-container {
+      display: none;
+    }
+
+    .btn {
+      .cta {
+        button {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    .left-container{
+      margin-left: 10px;
+    }
+
+    .absolute-container {
+      height: calc((100vh - 80px) - 70px);
+      width: 30%;
+    }
+
+    .contact-us{
+      flex-direction: column-reverse;
+
+      .social{
+        position: absolute;
+        bottom: 25px;
+        right: 10px;
+      }
+
+      p{
+        position: absolute;
+        right: 10px;
+
+      }
+    }
+  }
+
+  .header {
+    padding: 0 10px;
+
+    .logo{
+
+      svg{
+      padding-right: 2px;
+      }
+    }
+
+    .quick-links {
+      width: 100%;
+      left: 0%;
+      bottom: 0;
+      right: 0;
+
+      ul{
+        margin: 0;
+        padding:0;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+
+        li{
+          a{
+            font-size: .7rem;
+            margin: 0 10px;
+          }
+        }
       }
     }
   }
